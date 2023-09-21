@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 import { auth } from "../firebase";
 import { CgLivePhoto } from "react-icons/cg";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
 	const [email, setEmail] = useState("user@example.com");
@@ -36,7 +37,7 @@ const SignUp = () => {
 					const errorCode = error.code;
 					const errorMessage = error.message;
 
-					console.log(errorCode, errorMessage);
+					toast.error(errorMessage);
 				});
 		}
 	};
@@ -45,7 +46,7 @@ const SignUp = () => {
 		<section className="relative flex items-center justify-center p-2 font-poppins div-overlay">
 			<div className="bg-white flex items-center justify-between flex-col p-5 sm:p-10 my-10 md:my-16 sm:my-12 md:w-[590px] sm:w-[60%] w-full rounded-[34px]">
 				<div className="flex items-center justify-center text-[22px] font-bold">
-					<span className="m-1">
+					<span className="m-1 text-yellow-500">
 						<CgLivePhoto />
 					</span>
 					<h1>Fototeca</h1>

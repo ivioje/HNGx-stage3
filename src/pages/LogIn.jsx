@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useForm } from "react-hook-form";
 
@@ -117,7 +117,7 @@ const LogIn = () => {
 						{loading ? "Signing in" : "Log In"}
 					</button>
 
-					{/* <p className="text-center">
+					<p className="text-center">
 						Don't have an account?
 						<NavLink
 							to={`/signup`}
@@ -126,7 +126,7 @@ const LogIn = () => {
 							{" "}
 							Sign Up
 						</NavLink>
-					</p> */}
+					</p>
 				</form>
 			</div>
 		</section>

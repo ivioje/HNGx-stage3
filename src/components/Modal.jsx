@@ -33,13 +33,20 @@ function Modal() {
 					intuitive gallery of images. Rearrange images by dragging and dropping
 					them. Enjoy the calmness of Fototeca!
 				</p>
-
-				<NavLink
-					to="/login"
-					className="mt-6 text-xl font-bold text-gray-900"
-				>
-					Log In to continue
-				</NavLink>
+				<div className="flex items-center mt-6 text-lg font-bold text-gray-900">
+					<NavLink
+						to="/signup"
+						className="m-2 border-b border-dotted border-gray-950"
+					>
+						Create an account
+					</NavLink>
+					<NavLink
+						to="/login"
+						className="m-2 border-b border-dotted border-gray-950"
+					>
+						Log In
+					</NavLink>
+				</div>
 			</div>
 		</div>
 	);
