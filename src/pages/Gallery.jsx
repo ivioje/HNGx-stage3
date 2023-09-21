@@ -31,6 +31,8 @@ const Gallery = () => {
 		e.preventDefault();
 	};
 
+	document.addEventListener("dragover", handleDragOver, { passive: false });
+
 	const handleDrop = (e, targetItem) => {
 		if (!draggedItem || draggedItem.id === targetItem.id) {
 			return;

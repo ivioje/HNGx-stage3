@@ -26,21 +26,19 @@ const LogIn = () => {
 
 	//log in function
 	const onLogin = () => {
-		if (hasErrors) {
-			console.log(errors);
-		} else {
+		try {
 			setLoading(true);
-			signInWithEmailAndPassword(auth, email, password)
-				.then((userCredential) => {
+			signInWithEmailAndPassword(auth, email, password).then(
+				(userCredential) => {
 					// Signed in
 					navigate("/");
 					toast.success("Login successful!");
 					setLoading(false);
-				})
-				.catch((error) => {
-					const errorMessage = error.message;
-					toast.error(errorMessage);
-				});
+				}
+			);
+		} catch (error) {
+			const errorMessage = error.message;
+			toast.error(errorMessage);
 		}
 	};
 
