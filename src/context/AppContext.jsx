@@ -56,6 +56,7 @@ export const AppProvider = ({ children }) => {
 
 	//loading state
 	useEffect(() => {
+		setLoading(true);
 		const timeout = setTimeout(() => {
 			setLoading(false); // Set loading to false after the timeout
 		}, 4000);

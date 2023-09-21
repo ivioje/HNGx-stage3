@@ -111,7 +111,7 @@ const LogIn = () => {
 						disabled={loading === true}
 						type="submit"
 						className={`w-full ${
-							loading === true ? "bg-gray-500" : ""
+							loading === true ? "bg-gray-300" : ""
 						} p-2 mt-10 mb-6 text-lg font-bold text-center text-gray-100 rounded bg-gray-950 bg-opacity-95 hover:bg-opacity-100 `}
 					>
 						{loading ? "Signing in" : "Log In"}
