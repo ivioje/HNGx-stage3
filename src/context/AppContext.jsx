@@ -21,9 +21,8 @@ function preserveRef(key, v) {
 export const AppProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(false);
-	const [data, setData] = useState([]);
+	const [data, setData] = useState(images);
 	const [query, setQuery] = useState("");
-	const [filteredImages, setFilteredImages] = useState(images);
 
 	const auth = getAuth();
 
@@ -67,21 +66,9 @@ export const AppProvider = ({ children }) => {
 
 	//for image data
 	useEffect(() => {
-		setData(filteredImages);
+		setData(data);
 		setLoading(true);
 	}, []);
-
-	// search
-	useEffect(() => {
-		const filtered = data.filter((image) =>
-			image.tag.toLowerCase().includes(query.toLowerCase())
-		);
-		setFilteredImages(filtered);
-	}, [data, query]);
-
-	const handleInputChange = (e) => {
-		setQuery(e.target.value);
-	};
 
 	return (
 		<AppContext.Provider
@@ -89,10 +76,9 @@ export const AppProvider = ({ children }) => {
 				user,
 				loading,
 				data,
-				filteredImages,
 				query,
+				setQuery,
 				onLogout,
-				handleInputChange,
 			}}
 		>
 			{children}

@@ -3,9 +3,11 @@
 Welcome to the Fototeca! This web application allows users to browse, search, and reorder images. Users have to be authenticate to access the app.
 
 ## Demo
-See a live demo here: https://hn-gx-task3.vercel.app/
+
+See a live demo here: https://hn-gx-stage3.vercel.app/
 
 ### Log in details
+
 - email: user@example.com
 - password: 1Password
 
@@ -29,13 +31,13 @@ Before you begin, ensure you have met the following requirements:
 1. Clone this repository to your local machine:
 
    ```bash
-   https://github.com/ivioje/HNGx-task3.git
+   https://github.com/ivioje/HNGx-stage3.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd HNGX-task3
+   cd HNGX-stage3
    ```
 
 3. Install project dependencies:
@@ -80,8 +82,8 @@ Replace `your_api_key`, `your_auth_domain`, and other placeholders with your act
    - **Email**: user@example.com
    - **Password**: 1Password
 
-
 ---
 
 #### Author
+
 Eboreime Rhoda

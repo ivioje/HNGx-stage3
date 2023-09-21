@@ -7,15 +7,17 @@ import Navbar from "./components/Navbar";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
 import Footer from "./components/Footer";
-import 'react-toastify/dist/ReactToastify.css';
-
+import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
 	return (
 		<>
+			{/*notifications */}
 			<ToastContainer />
+			{/*navbar */}
 			<Navbar />
 
+			{/*app routes */}
 			<Routes>
 				<Route
 					path="/"
@@ -35,6 +37,7 @@ const App = () => {
 				/>
 			</Routes>
 
+			{/*footer */}
 			<Footer />
 		</>
 	);
