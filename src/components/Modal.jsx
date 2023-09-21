@@ -21,7 +21,7 @@ function Modal() {
 				showModal ? "show" : ""
 			}`}
 		>
-			<div className="bg-white sm:w-[50%] w-[90%] h-[60vh] shadow-2xl rounded-xl flex items-center justify-center flex-col">
+			<div className="bg-white sm:w-[50%] w-[90%] md:h-[60vh] h-[90vh] shadow-2xl rounded-xl flex items-center justify-center flex-col">
 				<div className="text-2xl font-bold text-gray-800 flex items-start text-[35px] mb-8 justify-center">
 					<span className="m-1 text-yellow-500 ">
 						<CgLivePhoto />
