@@ -8,7 +8,8 @@ import Search from "../components/Search";
 import Header from "../components/Header";
 import Skeleton from "../components/Skeleton";
 import Modal from "../components/Modal";
-import TouchImageCard from "../components/TouchImageCard";
+import ImageCard from "../components/ImageCard";
+import Spinner from "../components/Spinner";
 
 const Gallery = () => {
 	const { data, loading, user, query, setQuery } = useContext(AppContext);
@@ -146,7 +147,7 @@ const Gallery = () => {
 			<div className="flex items-center justify-center w-full bg-slate-50">
 				<div className="p-4 card xs:bg-white border my-10 py-10 sm:w-[90%] xs:w-[95%] w-full">
 					{loading ? (
-						<Skeleton />
+						<Spinner />
 					) : images.length ? (
 						isTouchDevice ? (
 							<div
@@ -164,7 +165,7 @@ const Gallery = () => {
 											backgroundColor: draggedItem === image ? "dragging" : "",
 										}}
 									>
-										<TouchImageCard
+										<ImageCard
 											image={image}
 											index={index}
 										/>
@@ -183,7 +184,7 @@ const Gallery = () => {
 									onDragOver={(e) => handleDragOver(e)}
 									onDrop={(e) => handleDrop(e, image)}
 								>
-									<TouchImageCard
+									<ImageCard
 										image={image}
 										index={index}
 									/>

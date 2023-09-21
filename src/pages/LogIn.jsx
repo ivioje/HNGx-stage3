@@ -13,6 +13,7 @@ const LogIn = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
+	const [loading, setLoading] = useState(false);
 
 	//react hook form validators
 	const {
@@ -28,11 +29,13 @@ const LogIn = () => {
 		if (hasErrors) {
 			console.log(errors);
 		} else {
+			setLoading(true);
 			signInWithEmailAndPassword(auth, email, password)
 				.then((userCredential) => {
 					// Signed in
 					navigate("/");
 					toast.success("Login successful!");
+					setLoading(false);
 				})
 				.catch((error) => {
 					const errorMessage = error.message;
@@ -105,10 +108,13 @@ const LogIn = () => {
 					</div>
 
 					<button
+						disabled={loading === true}
 						type="submit"
-						className="w-full p-2 mt-10 mb-6 text-lg font-bold text-center text-gray-100 rounded bg-gray-950 bg-opacity-95 hover:bg-opacity-100 "
+						className={`w-full ${
+							loading === true ? "bg-gray-500" : ""
+						} p-2 mt-10 mb-6 text-lg font-bold text-center text-gray-100 rounded bg-gray-950 bg-opacity-95 hover:bg-opacity-100 `}
 					>
-						Log In
+						{loading ? "Signing in" : "Log In"}
 					</button>
 
 					{/* <p className="text-center">
