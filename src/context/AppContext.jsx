@@ -59,7 +59,7 @@ export const AppProvider = ({ children }) => {
 		setLoading(true);
 		const timeout = setTimeout(() => {
 			setLoading(false); // Set loading to false after the timeout
-		}, 4000);
+		}, 5000);
 
 		// Clean up the timeout to prevent memory leaks
 		return () => clearTimeout(timeout);

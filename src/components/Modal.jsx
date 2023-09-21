@@ -34,12 +34,12 @@ function Modal() {
 					them. Enjoy the calmness of Fototeca!
 				</p>
 				<div className="flex items-center mt-6 text-lg font-bold text-gray-900">
-					<NavLink
+					{/* <NavLink
 						to="/signup"
 						className="m-2 border-b border-dotted border-gray-950"
 					>
 						Create an account
-					</NavLink>
+					</NavLink> */}
 					<NavLink
 						to="/login"
 						className="m-2 border-b border-dotted border-gray-950"
