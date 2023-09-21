@@ -79,7 +79,7 @@ const Gallery = () => {
 	};
 
 	const handleTouchEnd = (e) => {
-		if (draggedItem) {
+		if (draggedItem && e.touches && e.touches.length > 0) {
 			// Calculate the new index based on touch position
 			const newIndex = calculateNewIndexBasedOnTouchPosition(
 				e.touches[0].clientY
@@ -168,6 +168,7 @@ const Gallery = () => {
 										<ImageCard
 											image={image}
 											index={index}
+											loading={loading}
 										/>
 									</div>
 								))}
