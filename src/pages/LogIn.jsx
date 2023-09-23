@@ -10,10 +10,9 @@ import { toast } from "react-toastify";
 const LogIn = () => {
 	const navigate = useNavigate();
 
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+	const [email, setEmail] = useState("user@example.com");
+	const [password, setPassword] = useState("1Password");
 	const [showPassword, setShowPassword] = useState(false);
-	const [loading, setLoading] = useState(false);
 
 	//react hook form validators
 	const {
@@ -27,18 +26,16 @@ const LogIn = () => {
 	//log in function
 	const onLogin = () => {
 		try {
-			setLoading(true);
 			signInWithEmailAndPassword(auth, email, password).then(
 				(userCredential) => {
 					// Signed in
 					navigate("/");
 					toast.success("Login successful!");
-					setLoading(false);
 				}
 			);
 		} catch (error) {
 			const errorMessage = error.message;
-			toast.error(errorMessage);
+			return <div>{errorMessage}</div>;
 		}
 	};
 
@@ -66,6 +63,7 @@ const LogIn = () => {
 							name="email"
 							value={email}
 							type="email"
+							readOnly
 							onChange={(e) => setEmail(e.target.value)}
 							placeholder="Enter your email"
 							className="h-9 p-2 placeholder:font-[200] bg-slate-50 rounded w-full border border-gray-100"
@@ -87,6 +85,7 @@ const LogIn = () => {
 							{...register("password", { required: true })}
 							name="password"
 							value={password}
+							readOnly
 							type={showPassword ? "text" : "password"}
 							onChange={(e) => setPassword(e.target.value)}
 							placeholder="Enter your password"
@@ -106,13 +105,10 @@ const LogIn = () => {
 					</div>
 
 					<button
-						disabled={loading === true}
 						type="submit"
-						className={`w-full ${
-							loading === true ? "bg-gray-300" : ""
-						} p-2 mt-10 mb-6 text-lg font-bold text-center text-gray-100 rounded bg-gray-950 bg-opacity-95 hover:bg-opacity-100 `}
+						className="w-full p-2 mt-10 mb-6 text-lg font-bold text-center text-gray-100 rounded bg-gray-950 bg-opacity-95 hover:bg-opacity-100 "
 					>
-						{loading ? "Signing in" : "Log In"}
+						Log In
 					</button>
 
 					<p className="text-center">
