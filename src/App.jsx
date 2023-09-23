@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 import Gallery from "./pages/Gallery";
@@ -33,7 +33,7 @@ const App = () => {
 				/>
 				<Route
 					path="*"
-					element={<Gallery />}
+					element={<Navigate to="/" />}
 				/>
 			</Routes>
 
