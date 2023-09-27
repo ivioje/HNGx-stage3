@@ -2,15 +2,6 @@
 
 Welcome to the Fototeca! This web application allows users to browse, search, and reorder images. Users have to be authenticate to access the app.
 
-## Demo
-
-See a live demo here: https://hn-gx-stage3.vercel.app/
-
-### Log in details
-
-- email: user@example.com
-- password: 1Password
-
 ## Features
 
 - Browse and view images.
