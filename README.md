@@ -1,6 +1,6 @@
 # Image Gallery App
 
-Welcome to the Fototeca! This web application allows users to browse, search, and reorder images. Users have to be authenticate to access the app.
+Welcome to the Fototeca! This web application allows users to browse, search, and reorder images. Users have to be authenticated to access the app.
 
 ## Features
 
@@ -68,10 +68,6 @@ Replace `your_api_key`, `your_auth_domain`, and other placeholders with your act
    http://localhost:5173
    ```
 
-3. To use the authentication features, use the following login credentials:
-
-   - **Email**: user@example.com
-   - **Password**: 1Password
 
 ---
 
